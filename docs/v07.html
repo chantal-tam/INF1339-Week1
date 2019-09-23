@@ -1,0 +1,76 @@
+<html>
+    <head>
+    <style>
+        .standardTable {border: sold;
+            border-collapse: collapse;}
+        .blackbox{border: solid;
+            height: 100px;
+            width: 100px;
+            text-align: center;
+            background-color: black;
+            border-color: white;
+            color: yellow;}
+    </style>
+    <script>
+        function display(number) {
+            document.getElementById("decimal_input").innerHTML=number
+            var bcd = dec2bin(number)
+            document.getElementById("binary_output").innerHTML=bcd
+            
+            document.getElementById("bin2ssd_input").innerHTML=bin
+            var ssd = bin2ssd(bin)
+            document.getElementById("bin2ssd_output").innerHTML=ssd
+            
+            document.getElementById("illuminate_input").innerHTML=ssd
+            var ssd = illuminate(ssd)
+            document.getElementById("illuminate_output").innerHTML='done'
+        }
+        function dec2bin(decimal) {
+            var binary_numbers = ['0000','0001','0010','0011','0100','0101','0110','0111','1000','1001']
+            return (binary_numbers[decimal])
+        }
+        function dec2bin2 (decimal) {
+            var quotient = decimal
+            var output = ''
+            while (quotient > 0) {
+                remainder = quotient % 2
+                if (remainder == 1)
+                    {output = '1' + output}
+                else
+                    {output = '0' + output}
+                quotient = Math.floor(quotient/2)
+            }
+            while (output.length < 4) {output = '0' + output}
+            return(output)
+        }
+    </script>
+    </head>
+    <body>
+        <h2>Version 7 Stubs for Parts 3 and 4</h2>
+        <table class="standardTable">
+            <tr>
+                <td class="blackbox"><h3>Keypad</h3>
+                <button type="button" onclick="display(1)">1</button>
+                <button type="button" onclick="display(2)">2</button>
+                <button type="button" onclick="display(3)">3</button>
+                <button type="button" onclick="display(4)">4</button>
+                <button type="button" onclick="display(5)">5</button>
+                <button type="button" onclick="display(6)">6</button>
+                <button type="button" onclick="display(7)">7</button>
+                <button type="button" onclick="display(8)">8</button>
+                <button type="button" onclick="display(9)">9</button>
+                <button type="button" onclick="display(0)">0</button></td>
+                <td class="blackbox"><h3>Decimal to Binary</h3><p id="decimal_input">???</p>
+                    <p id="binary_output">???</p>
+                </td>
+                <td class="blackbox"><h3>Binary to SSD Signals</h3>
+                 <p id="binary2ssd_input"></p>
+                 <p id="binary2ssd_output"></p>
+                </td>
+                <td class="blackbox"><h3>Iluminate Segments</h3>
+                 <p id="illuminate_input"></p>
+                 <p id="illuminate_output"></p></td>
+            </tr>
+        </table>
+    </body>
+</html>
