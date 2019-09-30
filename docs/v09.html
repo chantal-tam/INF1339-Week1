@@ -100,66 +100,59 @@
         </script>
     </head> 
     <body> 
-        <h2> Version 8 Adding BIN2SSD Functionality</h2>
-        <table class= "standardTable"> 
-            <tr> 
-                <td class= "blackbox"><h3> Keypad </h3> 
-                <button type="button" onclick="display(1)"> 1 </button>
-                <button type="button" onclick="display(2)">2 </button>
-                <button type="button" onclick="display(3)">3 </button>
-                <button type="button" onclick="display(4)">4 </button>
-                <button type="button" onclick="display(5)">5 </button>
-                <button type="button" onclick="display(6)">6 </button>
-                <button type="button" onclick="display(7)">7 </button>
-                <button type="button" onclick="display(8)">8 </button>
-                <button type="button" onclick="display(9)">9 </button>
-                <button type="button" onclick="display(0)">0 </button>
+ <h2>Version 9 Segments</h2>
+        <table class="standardTable">
+            <tr>
+                <td class="blackbox"><h3>Keypad</h3>
+                <button type="button" onclick="display(1)">1</button>
+                <button type="button" onclick="display(2)">2</button>
+                <button type="button" onclick="display(3)">3</button>
+                <button type="button" onclick="display(4)">4</button>
+                <button type="button" onclick="display(5)">5</button>
+                <button type="button" onclick="display(6)">6</button>
+                <button type="button" onclick="display(7)">7</button>
+                <button type="button" onclick="display(8)">8</button>
+                <button type="button" onclick="display(9)">9</button>
+                <button type="button" onclick="display(0)">0</button>
                 </td>
-                <td class="blackbox"> <h3> Decimal to Binary </h3> 
-                <p id="decimal_input">???</p>
-                <p id="binary_output"> ???</p></td>
-                
-                <td class="blackbox"> <h3> Binary to SSD Signals</h3>
-                <p id="binary2ssd_input"></p>
-                <p id="binary2ssd_output"></p>
+                <td class="blackbox">
+                    <h3>Decimal to Binary</h3>
+                    <p id="decimal_input">???</p>
+                    <p id="binary_output">???</p>
                 </td>
-                
-                <td class="blackbox"> 
-                    <h3>Illuminate Segments</h3>
+                <td class="blackbox"><h3>Binary to SSD Signals</h3>
+                 <p id="ssd_input"></p>
+                </td>
+                <td class="blackbox">
+                    <h3>Iluminate Segments</h3>
                     <p id="segments"></p>
                     <table>
                         <tr>
-                            <td class="notsevenSegmentTable"> 1</td>
-                            <td id="segmentA"
-                            class="sevenSegmentTable"> A</td>
-                            <td class="notsevenSegmentTable"> 3</td>
+                            <td class="notsevenSegmentTable corner"></td>
+                            <td id="segmentA" class="sevenSegmentTable horizontal">A</td>
+                            <td class="notsevenSegmentTable corner"></td>
                         </tr>
                         <tr>
-                            <td id="segmentF"
-                            class="sevenSegmentTable"> F</td>
-                            <td class="notsevenSegmentTable"> 2</td>
-                            <td id="segmentB"
-                            class="sevenSegmentTable"> B</td>
+                            <td id="segmentF" class="sevenSegmentTable vertical">F</td>
+                            <td class="notsevenSegmentTable middle"></td>
+                            <td id="segmentB" class="sevenSegmentTable vertical">B</td>
                         </tr>
                         <tr>
-                            <td class="notsevenSegmentTable"> 1</td>
-                            <td id="segmentG"
-                            class="sevenSegmentTable"> G</td>
-                            <td class="notsevenSegmentTable"> 3</td>
+                            <td class="notsevenSegmentTable corner"></td>
+                            <td id="segmentG" class="sevenSegmentTable horizontal">G</td>
+                            <td class="notsevenSegmentTable corner"></td>
                         </tr>
                         <tr>
-                            <td id="segmentE"
-                            class="sevenSegmentTable"> E</td>
-                            <td class="notsevenSegmentTable"> 2</td>
-                            <td id="segmentC"
-                            class="sevenSegmentTable"> C</td>
+                            <td id="segmentE" class="sevenSegmentTable vertical">E</td>
+                            <td class="notsevenSegmentTable horizontal"></td>
+                            <td id="segmentC" class="sevenSegmentTable vertical">C</td>
                         </tr>
                         <tr>
-                            <td class="notsevenSegmentTable"> 1</td>
-                            <td id="segmentD"
-                            class="sevenSegmentTable"> D</td>
-                            <td class="notsevenSegmentTable"> 3</td>
+                            <td class="notsevenSegmentTable corner"></td>
+                            <td id="segmentD" class="sevenSegmentTable horizontal">D</td>
+                            <td class="notsevenSegmentTable corner"></td>
                         </tr>
+
                     </table>
                 </td>
             </tr>
