@@ -28,7 +28,34 @@
             var ssd = illuminate(ssd)
             document.getElementById("illuminate_output").innerHTML='done'
         }
-        function dec2bin(decimal) {
+        function bin2ssd(binary){
+            var w = false
+            var x = false
+            var y = false
+            var z = false
+            if (binary[0] == '1') {w = true}
+            if (binary[1] == '1') {w = true}
+            if (binary[2] == '1') {w = true}
+            if (binary[3] == '1') {w = true}
+            var a = !w&x&z || w&!x&!y || !x&!y&!z || !w&y
+            var b = false
+            var c = false
+            var d = false
+            var e = false
+            var f = false
+            var g = false
+            var output = ''
+            if (a) {output = output + '1'} else {output = output + '0'}
+            if (b) {output = output + '1'} else {output = output + '0'}
+            if (c) {output = output + '1'} else {output = output + '0'}
+            if (d) {output = output + '1'} else {output = output + '0'}
+            if (e) {output = output + '1'} else {output = output + '0'}
+            if (f) {output = output + '1'} else {output = output + '0'}
+            if (g) {output = output + '1'} else {output = output + '0'}
+            return (output)
+        }
+        function illuminate(){}
+               function dec2bin(decimal) {
             var binary_numbers = ['0000','0001','0010','0011','0100','0101','0110','0111','1000','1001']
             return (binary_numbers[decimal])
         }
@@ -46,10 +73,10 @@
             while (output.length < 4) {output = '0' + output}
             return(output)
         }
-    </script>
+    </script> 
     </head>
     <body>
-        <h2>Version 8 Binary to 7 Segment Signals</h2>
+        <h2>Versions 8 Adding BIN2SSD Functionality</h2>
         <table class="standardTable">
             <tr>
                 <td class="blackbox"><h3>Keypad</h3>
@@ -62,55 +89,17 @@
                 <button type="button" onclick="display(7)">7</button>
                 <button type="button" onclick="display(8)">8</button>
                 <button type="button" onclick="display(9)">9</button>
-                <button type="button" onclick="display(0)">0</button>
-                </td>
-                <td class="blackbox">
-                    <h3>Decimal to Binary</h3>
-                    <p id="decimal_input">???</p>
+                <button type="button" onclick="display(0)">0</button></td>
+                <td class="blackbox"><h3>Decimal to Binary</h3><p id="decimal_input">???</p>
                     <p id="binary_output">???</p>
                 </td>
                 <td class="blackbox"><h3>Binary to SSD Signals</h3>
-                 <p id="ssd_input"></p>
+                 <p id="binary2ssd_input"></p>
+                 <p id="binary2ssd_output"></p>
                 </td>
-                <td class="blackbox">
-                    <h3>Iluminate Segments</h3>
-                    <p id="segments"></p>
-                    <table>
-                        <tr>
-                            <td class="notsevenSegmentTable">1</td>
-                            <td id="segmentA" 
-                                class="sevenSegmentTable">A</td>
-                            <td class="notsevenSegmentTable">3</td>
-                        </tr>
-                        <tr>
-                            <td id="segmentF" 
-                                class="sevenSegmentTable">F</td>
-                            <td class="notsevenSegmentTable">2</td>
-                            <td id="segmentB" 
-                                class="sevenSegmentTable">B</td>
-                        </tr>
-                        <tr>
-                            <td class="notsevenSegmentTable">1</td>
-                            <td id="segmentG" 
-                                class="sevenSegmentTable">G</td>
-                            <td class="notsevenSegmentTable">3</td>
-                        </tr>
-                        <tr>
-                            <td id="segmentE" 
-                                class="sevenSegmentTable">E</td>
-                            <td class="notsevenSegmentTable">2</td>
-                            <td id="segmentC" 
-                                class="sevenSegmentTable">C</td>
-                        </tr>
-                        <tr>
-                            <td class="notsevenSegmentTable">1</td>
-                            <td id="segmentD" 
-                                class="sevenSegmentTable">D</td>
-                            <td class="notsevenSegmentTable">3</td>
-                        </tr>
-                        
-                    </table>
-                </td>
+                <td class="blackbox"><h3>Iluminate Segments</h3>
+                 <p id="illuminate_input"></p>
+                 <p id="illuminate_output"></p></td>
             </tr>
         </table>
     </body>
